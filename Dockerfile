@@ -8,7 +8,7 @@ RUN git clone https://github.com/ekholabs/eureka-service
 WORKDIR eureka-service
 RUN ./gradlew clean build
 
-EXPOSE 8082
+EXPOSE 8083
 
 ENTRYPOINT ["java"]
 CMD ["-server", "-Xmx256M", "-jar", "build/libs/eureka-service-1.0-SNAPSHOT.jar"]
