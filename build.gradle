@@ -17,10 +17,6 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
-jar {
-  baseName = 'eureka-service'
-  version = '0.0.1-SNAPSHOT'
-}
 sourceCompatibility = 1.8
 
 repositories {
