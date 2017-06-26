@@ -1,4 +1,4 @@
-package nl.ekholabs.microservices.bookstore.eureka;
+package nl.ekholabs.microservices.eureka;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DiscoveryApplicationTests {
+public class ServiceDiscoveryApplicationTests {
 
 	@Test
 	public void contextLoads() {
