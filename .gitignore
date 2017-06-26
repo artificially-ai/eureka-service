@@ -2,3 +2,4 @@
 build/
 .gradle/
 eureka-service.iml
+.DS_Store
