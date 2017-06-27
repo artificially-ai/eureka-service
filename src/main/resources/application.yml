@@ -1,4 +1,9 @@
 spring:
+  cloud:
+    inetutils:
+      ignoredInterfaces:
+        - docker0
+        - veth.*
   application:
     name: eureka-service
 
