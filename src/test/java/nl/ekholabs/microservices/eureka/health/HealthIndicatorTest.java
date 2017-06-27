@@ -1,4 +1,4 @@
-package nl.ekholabs.microservices.eureka;
+package nl.ekholabs.microservices.eureka.health;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,28 +7,27 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.RequestBuilder;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@AutoConfigureMockMvc
 @SpringBootTest
-public class ServiceDiscoveryApplicationTests {
+@AutoConfigureMockMvc
+public class HealthIndicatorTest {
 
-	@Autowired
-	private MockMvc mvc;
+  @Autowired
+  private MockMvc mvc;
 
-	@Test
-	public void statusOk() throws Exception {
-		final RequestBuilder request = get("/");
-		mvc.perform(request).andExpect(status().isOk());
-	}
+  @Test
+  public void testStatus200() throws Exception {
+    mvc.perform(get("/health"))
+        .andExpect(status().isOk());
+  }
 
-	@Test
-	public void statusClientError() throws Exception {
-		final RequestBuilder request = get("/check");
-		mvc.perform(request).andExpect(status().is4xxClientError());
-	}
+  @Test
+  public void testClientError() throws Exception {
+    mvc.perform(get("/check"))
+        .andExpect(status().is4xxClientError());
+  }
 }
