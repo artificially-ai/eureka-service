@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: eureka-service
-  cloud:
-    config:
-      uri: http://${CONFIGURATION_SERVER_HOST_NAME:configuration-service}:8082

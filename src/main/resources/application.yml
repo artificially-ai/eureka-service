@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: eureka-service
+
+server:
+  port: ${EUREKA_PORT:8083}
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+management:
+  security:
+    enabled: false
+
+endpoints:
+  refresh:
+    enabled: true
+  restart:
+    enabled: true
