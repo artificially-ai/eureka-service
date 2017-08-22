@@ -10,4 +10,4 @@ ENV EUREKA_PORT=8083
 EXPOSE $EUREKA_PORT
 
 ENTRYPOINT ["java"]
-CMD ["-server", "-Xmx256M", "-jar", "eureka-service.jar"]
+CMD ["-server", "-Xmx128M", "-jar", "eureka-service.jar"]
